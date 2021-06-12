@@ -9,7 +9,8 @@ var blockBox6 = 0
 var blockBox7 = 0
 var blockBox8 = 0
 var blockBox9 = 0
-var btn = document.getElementById("btnMultiplayer")
+var btnVsCPU = document.getElementById("btnVsCPU")
+var btnMultiplayer = document.getElementById("btnMultiplayer")
 var box1 = document.getElementById("box1")
 var box2 = document.getElementById("box2")
 var box3 = document.getElementById("box3")
@@ -22,128 +23,129 @@ var box9 = document.getElementById("box9")
 
 function gameMultiplayerEvents(){
     alert("Jogo multiplayer iniciado!")
-    setTimeout(switchPlayer)
-    setTimeout(checkVictory)
-    btn.style.display="none"    
+    setTimeout(switchMultiplayerPlayer)
+    setTimeout(checkMultiplayerVictory)
+    btnMultiplayer.style.display="none" 
+    btnVsCPU.style.display="none"    
 
-    box1.addEventListener("click", switchClick1)
-    box2.addEventListener("click", switchClick2)
-    box3.addEventListener("click", switchClick3)
-    box4.addEventListener("click", switchClick4)
-    box5.addEventListener("click", switchClick5)
-    box6.addEventListener("click", switchClick6)
-    box7.addEventListener("click", switchClick7)
-    box8.addEventListener("click", switchClick8)
-    box9.addEventListener("click", switchClick9)
+    box1.addEventListener("click", switchMultiplayerClick1)
+    box2.addEventListener("click", switchMultiplayerClick2)
+    box3.addEventListener("click", switchMultiplayerClick3)
+    box4.addEventListener("click", switchMultiplayerClick4)
+    box5.addEventListener("click", switchMultiplayerClick5)
+    box6.addEventListener("click", switchMultiplayerClick6)
+    box7.addEventListener("click", switchMultiplayerClick7)
+    box8.addEventListener("click", switchMultiplayerClick8)
+    box9.addEventListener("click", switchMultiplayerClick9)
 }
 
-function switchClick1(){
+function switchMultiplayerClick1(){
     if(cont%2==0 && blockBox1==0){
         box1.style.backgroundColor="#00f"
         box1.style.borderRadius="100%"
-        check()
+        checkMultiplayer()
     }else if(cont%2!=0 && blockBox1==0){
         box1.style.backgroundImage="url(./img/player2.png)"
-        check()
+        checkMultiplayer()
     }
     blockBox1 = 1
 }
-function switchClick2(){
+function switchMultiplayerClick2(){
     if(cont%2==0 && blockBox2==0){
         box2.style.backgroundColor="#00f"
         box2.style.borderRadius="100%"
-        check()
+        checkMultiplayer()
     }else if(cont%2!=0 && blockBox2==0){
         box2.style.backgroundImage="url(./img/player2.png)"
-        check()
+        checkMultiplayer()
     }
     blockBox2 = 1
 }
-function switchClick3(){
+function switchMultiplayerClick3(){
     if(cont%2==0 && blockBox3==0){
         box3.style.backgroundColor="#00f"
         box3.style.borderRadius="100%"
-        check()
+        checkMultiplayer()
     }else if(cont%2!=0 && blockBox3==0){
         box3.style.backgroundImage="url(./img/player2.png)"
-        check()
+        checkMultiplayer()
     }
     blockBox3 = 1
 }
-function switchClick4(){
+function switchMultiplayerClick4(){
     if(cont%2==0 && blockBox4==0){
         box4.style.backgroundColor="#00f"
         box4.style.borderRadius="100%"
-        check()
+        checkMultiplayer()
     }else if(cont%2!=0 && blockBox4==0){
         box4.style.backgroundImage="url(./img/player2.png)"
-        check()
+        checkMultiplayer()
     }
     blockBox4 = 1
 }
-function switchClick5(){
+function switchMultiplayerClick5(){
     if(cont%2==0 && blockBox5==0){
         box5.style.backgroundColor="#00f"
         box5.style.borderRadius="100%"
-        check()
+        checkMultiplayer()
     }else if(cont%2!=0 && blockBox5==0){
         box5.style.backgroundImage="url(./img/player2.png)"
-        check()
+        checkMultiplayer()
     }
     blockBox5 = 1
 }
-function switchClick6(){
+function switchMultiplayerClick6(){
     if(cont%2==0 && blockBox6==0){
         box6.style.backgroundColor="#00f"
         box6.style.borderRadius="100%"
-        check()
+        checkMultiplayer()
     }else if(cont%2!=0 && blockBox6==0){
         box6.style.backgroundImage="url(./img/player2.png)"
-        check()
+        checkMultiplayer()
     }
     blockBox6 = 1
 }
-function switchClick7(){
+function switchMultiplayerClick7(){
     if(cont%2==0 && blockBox7==0){
         box7.style.backgroundColor="#00f"
         box7.style.borderRadius="100%"
-        check()
+        checkMultiplayer()
     }else if(cont%2!=0 && blockBox7==0){
         box7.style.backgroundImage="url(./img/player2.png)"
-        check()
+        checkMultiplayer()
     }
     blockBox7 = 1
 }
-function switchClick8(){
+function switchMultiplayerClick8(){
     if(cont%2==0 && blockBox8==0){
         box8.style.backgroundColor="#00f"
         box8.style.borderRadius="100%"
-        check()
+        checkMultiplayer()
     }else if(cont%2!=0 && blockBox8==0){
         box8.style.backgroundImage="url(./img/player2.png)"
-        check()
+        checkMultiplayer()
     }
     blockBox8 = 1
 }
-function switchClick9(){
+function switchMultiplayerClick9(){
     if(cont%2==0 && blockBox9==0){
         box9.style.backgroundColor="#00f"
         box9.style.borderRadius="100%"
-        check()
+        checkMultiplayer()
     }else if(cont%2!=0 && blockBox9==0){
         box9.style.backgroundImage="url(./img/player2.png)"
-        check()
+        checkMultiplayer()
     }
     blockBox9 = 1
 }
 
-function check(){
-    setTimeout(switchPlayer)
-    setTimeout(checkVictory)
+function checkMultiplayer(){
+    setTimeout(switchMultiplayerPlayer)
+    setTimeout(checkMultiplayerVictory)
     cont=cont+1
 }
 
-function switchPlayer(){
+function switchMultiplayerPlayer(){
     if(cont<9){
         if(cont%2==0){
             document.getElementById("infoGame").innerHTML= "Vez do Jogador 1"
@@ -153,7 +155,7 @@ function switchPlayer(){
     }
 }
 
-function checkVictory(){
+function checkMultiplayerVictory(){
     if((box1.style.backgroundColor && box2.style.backgroundColor && box3.style.backgroundColor) ||
     (box4.style.backgroundColor && box5.style.backgroundColor && box6.style.backgroundColor) ||
     (box7.style.backgroundColor && box8.style.backgroundColor && box9.style.backgroundColor) ||
