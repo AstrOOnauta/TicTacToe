@@ -23,7 +23,7 @@ var box8 = document.getElementById("box8")
 var box9 = document.getElementById("box9")
 
 function gameVsCPUEvents(){
-    alert("Jogo multiplayer iniciado!")
+    alert("Jogo contra o CPU iniciado!")
     setTimeout(switchPlayer)
     setTimeout(checkVictory)
     btnMultiplayer.style.display="none" 
