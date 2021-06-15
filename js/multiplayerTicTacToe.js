@@ -10,6 +10,7 @@ var blockBox7 = 0
 var blockBox8 = 0
 var blockBox9 = 0
 var btnVsCPU = document.getElementById("btnVsCPU")
+var btnVsCPUHard = document.getElementById("btnVsCPUHard")
 var btnMultiplayer = document.getElementById("btnMultiplayer")
 var box1 = document.getElementById("box1")
 var box2 = document.getElementById("box2")
@@ -27,6 +28,7 @@ function gameMultiplayerEvents(){
     setTimeout(checkMultiplayerVictory)
     btnMultiplayer.style.display="none" 
     btnVsCPU.style.display="none"    
+    btnVsCPUHard.style.display="none" 
 
     box1.addEventListener("click", switchMultiplayerClick1)
     box2.addEventListener("click", switchMultiplayerClick2)
