@@ -10,6 +10,7 @@ var blockBox7 = 0
 var blockBox8 = 0
 var blockBox9 = 0
 var btnVsCPU = document.getElementById("btnVsCPU")
+var btnVsCPUMiddle = document.getElementById("btnVsCPUMiddle")
 var btnVsCPUHard = document.getElementById("btnVsCPUHard")
 var btnMultiplayer = document.getElementById("btnMultiplayer")
 var box1 = document.getElementById("box1")
@@ -26,10 +27,14 @@ function gameMultiplayerEvents(){
     alert("Jogo multiplayer iniciado!")
     setTimeout(switchMultiplayerPlayer)
     setTimeout(checkMultiplayerVictory)
+
+    //Disable buttons when game start
     btnMultiplayer.style.display="none" 
-    btnVsCPU.style.display="none"    
+    btnVsCPU.style.display="none"
+    btnVsCPUMiddle.style.display="none"    
     btnVsCPUHard.style.display="none" 
 
+    //Click events to play the game
     box1.addEventListener("click", switchMultiplayerClick1)
     box2.addEventListener("click", switchMultiplayerClick2)
     box3.addEventListener("click", switchMultiplayerClick3)
@@ -41,6 +46,7 @@ function gameMultiplayerEvents(){
     box9.addEventListener("click", switchMultiplayerClick9)
 }
 
+//Functions for Player1 and Player2 to play the game
 function switchMultiplayerClick1(){
     if(cont%2==0 && blockBox1==0){
         box1.style.backgroundColor="#00f"
@@ -141,12 +147,14 @@ function switchMultiplayerClick9(){
     blockBox9 = 1
 }
 
+//Function to switch the time of the players
 function checkMultiplayer(){
     setTimeout(switchMultiplayerPlayer)
     setTimeout(checkMultiplayerVictory)
     cont=cont+1
 }
 
+//Switch the menssage accordingly wth player time
 function switchMultiplayerPlayer(){
     if(cont<9){
         if(cont%2==0){
@@ -157,6 +165,7 @@ function switchMultiplayerPlayer(){
     }
 }
 
+//Check the player win
 function checkMultiplayerVictory(){
     if((box1.style.backgroundColor && box2.style.backgroundColor && box3.style.backgroundColor) ||
     (box4.style.backgroundColor && box5.style.backgroundColor && box6.style.backgroundColor) ||

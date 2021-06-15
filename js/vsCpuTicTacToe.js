@@ -12,6 +12,7 @@ var blockBox8 = 0
 var blockBox9 = 0
 var btnVsCPU = document.getElementById("btnVsCPU")
 var btnVsCPUMiddle = document.getElementById("btnVsCPUMiddle")
+var btnVsCPUHard = document.getElementById("btnVsCPUHard")
 var btnMultiplayer = document.getElementById("btnMultiplayer")
 var box1 = document.getElementById("box1")
 var box2 = document.getElementById("box2")
@@ -24,13 +25,17 @@ var box8 = document.getElementById("box8")
 var box9 = document.getElementById("box9")
 
 function gameVsCPUEvents(){
-    alert("Jogo contra o CPU iniciado - Nível Fácil!")
+    alert("Jogo contra o CPU iniciado!")
     setTimeout(switchPlayer)
     setTimeout(checkVictory)
+
+    //Disable buttons when game start
     btnMultiplayer.style.display="none" 
     btnVsCPU.style.display="none"
-    btnVsCPUMiddle.style.display="none"   
+    btnVsCPUMiddle.style.display="none"  
+    btnVsCPUHard.style.display="none"   
 
+    //Click events to play the game
     box1.addEventListener("click", switchClick1)
     box2.addEventListener("click", switchClick2)
     box3.addEventListener("click", switchClick3)
@@ -42,6 +47,7 @@ function gameVsCPUEvents(){
     box9.addEventListener("click", switchClick9)
 }
 
+//Functions for Player1 to play the game
 function switchClick1(){
     if(cont%2==0 && blockBox1==0){
         box1.style.backgroundColor="#00f"
@@ -124,6 +130,7 @@ function switchClick9(){
     }
 }
 
+//CPU play random using CPURandom function
 function CPU(){
     if(randomSwitch == 0 && cont%2!=0){
         randomSwitch = Math.floor(Math.random()*9)
@@ -222,6 +229,7 @@ function CPU(){
     }
 }
 
+//Function to switch the time of the players
 function check(){
     setTimeout(switchPlayer)
     setTimeout(checkVictory)
@@ -229,6 +237,7 @@ function check(){
     cont=cont+1
 }
 
+//Switch the menssage accordingly wth player time
 function switchPlayer(){
     if(cont<9){
         if(cont%2==0){
@@ -239,6 +248,7 @@ function switchPlayer(){
     }
 }
 
+//Check the player win
 function checkVictory(){
     if((box1.style.backgroundColor && box2.style.backgroundColor && box3.style.backgroundColor) ||
     (box4.style.backgroundColor && box5.style.backgroundColor && box6.style.backgroundColor) ||
