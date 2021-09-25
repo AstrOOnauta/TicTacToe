@@ -1,55 +1,162 @@
 body{
     padding: 0;
     margin: 0;
-    background-repeat: repeat;
-    background-size: 100%;
-    overflow: hidden;
-    position: relative;
-    background-image: url("../img/backgorundgame.png");
+    overflow-x: hidden;
+    background-color: #303030;
+    color: white;
+    font-family: sans-serif;
 }
-#maingrid{
+
+header{
     width: 100%;
-    height: 100vh;
-    background-color: black;
-    opacity: 60%;
-    position: absolute;
+    height: 10vh;
+    padding: 0;
+    margin: 0;
+    background-color: #fbb034;
 }
-#game{
-    cursor:pointer;
-    width: 300px;
-    height: 300px;
+
+#headerArea{
+    width: 90%;
     margin: auto;
-    position: relative;
+    line-height: 10vh;
+    font-size: xx-large;
+}
+
+#headerArea i{
+    color: #303030;
+    font-size: 3rem;
+    padding-top: .4rem;
+}
+
+#headerArea a{
+    font-weight: 600;
+    text-decoration: none;
+    color: #303030;
+}
+
+#maingrid{
     display: flex;
     flex-wrap: wrap;
-    align-content: flex-start;
-    background-image: url("../img/boardgame.png");
+    justify-content: space-evenly;
+    width: 80%;
+    height: 80vh;
+    margin: auto;
+}
+
+#details{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 25rem;
+    margin: auto;
+}
+
+#game{
+    cursor:pointer;
+    width: 15rem;
+    min-width: 15rem;
+    height: 15rem;
+    margin: auto;
+    display: none;
+    flex-wrap: wrap;
+    border: 1px solid #303030;
+    box-shadow: 0 0 30px 5px #000;
 }
 
 .box{
-    width: 100px;
-    height: 100px;
-    position: relative;
-    display: flex;
-    left: 0%;
+    width: 3rem;
+    min-width: 3rem;
+    height: 3rem;
+    padding: 1rem;
+    font-size: 3rem;
+    text-align: center;
+    background-color: #fbb034;
+    outline: 1px solid #303030;
     z-index: 10;
 }
 
 h1,h2{
-    top: 50px;
     text-align: center;
-    width: 300px;
     margin: auto;
-    color: white;
-    position: relative;
 }
+
+span{
+    color: #fbb034;
+}
+
 input{
-    cursor:pointer;
-    position: relative;
+    cursor: pointer;
     font-size: large;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 10px;
-    display: block;
-    top: 60px;
+    margin: .5rem auto;
+    width: 25vmax;
+    height: 8vh;
+    border: none;
+    border-radius: .5rem;
+    box-shadow: 0 0 30px 5px #000;
+}
+
+input:hover{
+    background-color: #fbb034;
+}
+
+input:focus{
+    outline: none;
+}
+
+footer{
+    width: 100%;
+    height: 10vh;
+    background-color: #fbb034;
+}
+
+footer p {
+    line-height: 10vh;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+footer a{
+    text-decoration: none;
+    color: #303030;
+    font-weight: 600;
+}
+
+@media screen and (min-width: 600px){
+    #game{
+        min-width: 31.2rem;
+        height: 31.5rem;
+    }
+    .box{
+        width: 6rem;
+        height: 6rem;
+        padding: 2.2rem;
+        font-size: 6.2rem;
+    }
+}
+
+@media screen and (min-width: 1000px){
+    #game{
+        min-width: 38.5rem;
+        height: 39rem;
+    }
+    .box{
+        width: 8rem;
+        height: 8rem;
+        padding: 2.4rem;
+        font-size: 7.5rem;
+    }
+}
+
+@media screen and (min-width: 1100px) {
+    #game{
+        min-width: 24.6rem;
+        height: 24.6rem;
+    }
+    .box{
+        width: 5rem;
+        height: 5rem;
+        padding: 1.6rem;
+        font-size: 5rem;
+    }
 }

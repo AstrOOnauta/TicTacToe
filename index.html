@@ -8,12 +8,22 @@
     <title>Jogo da velha</title>
 </head>
 <body>
+    <header>
+        <div id="headerArea">
+            <i class="fas fa-meteor"></i>
+            <a href="https://github.com/AstrOOnauta">AstrOOnauta</a>
+        </div>
+    </header>
     <div id="maingrid">
-    </div>
-    <div id="details">
-        
-    </div>
-    <div id="game">
+        <div id="details">
+            <h1><span>JOGO DA VELHA</span></h1><br>
+            <h2 id="infoGame">Jogo não iniciado!</h2><br>
+            <input type="button" id="btnVsCPU" value="vs CPU - Fácil" onclick="gameVsCPUEvents()"></input>
+            <input type="button" id="btnVsCPUMiddle" value="vs CPU - Médio" onclick="gameVsCPUMiddleEvents()"></input>
+            <input type="button" id="btnVsCPUHard" value="vs CPU - Difícil" onclick="gameVsCPUHardEvents()"></input>
+            <input type="button" id="btnMultiplayer" value="Multiplayer" onclick="gameMultiplayerEvents()"></input>
+        </div>
+        <div id="game">
             <div id="box1" class="box"></div>
             <div id="box2" class="box"></div>
             <div id="box3" class="box"></div>
@@ -25,12 +35,11 @@
             <div id="box9" class="box"></div>
         </div>
     </div>
-    <h1>JOGO DA VELHA</h1>
-    <h2 id="infoGame">Jogo não iniciado!</h2>
-    <input type="button" id="btnVsCPU" value="vs CPU - Fácil" onclick="gameVsCPUEvents()"></input>
-    <input type="button" id="btnVsCPUMiddle" value="vs CPU - Médio" onclick="gameVsCPUMiddleEvents()"></input>
-    <input type="button" id="btnVsCPUHard" value="vs CPU - Difícil" onclick="gameVsCPUHardEvents()"></input>
-    <input type="button" id="btnMultiplayer" value="Multiplayer" onclick="gameMultiplayerEvents()"></input>
+    <footer>
+        <p>Desenvolvido por <a href="https://github.com/AstrOOnauta">AstrOOnauta</a></p>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/d5ca61eae2.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="./js/multiplayerTicTacToe.js"></script>
     <script type="text/javascript" src="./js/vsCpuTicTacToe.js"></script>
     <script type="text/javascript" src="./js/vsCpuMiddleTicTacToe.js"></script>

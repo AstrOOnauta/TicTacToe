@@ -10,6 +10,7 @@ var blockBox6 = 0
 var blockBox7 = 0
 var blockBox8 = 0
 var blockBox9 = 0
+var boardgame = document.getElementById("game")
 var btnVsCPU = document.getElementById("btnVsCPU")
 var btnVsCPUMiddle = document.getElementById("btnVsCPUMiddle")
 var btnVsCPUHard = document.getElementById("btnVsCPUHard")
@@ -27,9 +28,12 @@ var box9 = document.getElementById("box9")
 function gameVsCPUHardEvents(){
     alert("Jogo contra o CPU iniciado - Nível Difícil!")
     cont = 1  //CPU start in game
-    setTimeout(CPURandom)
+    setTimeout(CPURandom, 1000)
     setTimeout(switchHardPlayer)
     setTimeout(checkHardVictory)
+
+    //Enable the tictactoe boardgame
+    boardgame.style.display = "flex"
     
     //Disable buttons when game start
     btnMultiplayer.style.display="none" 
@@ -52,8 +56,7 @@ function gameVsCPUHardEvents(){
 //Functions for Player1 to play the game
 function switchHardClick1(){
     if(cont%2==0 && blockBox1==0){
-        box1.style.backgroundColor="#00f"
-        box1.style.borderRadius="100%"
+        box1.innerHTML = "X"
         blockBox1 = 1
         checkHard()
         CPUAttackHard()
@@ -61,8 +64,7 @@ function switchHardClick1(){
 }
 function switchHardClick2(){
     if(cont%2==0 && blockBox2==0){
-        box2.style.backgroundColor="#00f"
-        box2.style.borderRadius="100%"
+        box2.innerHTML = "X"
         blockBox2 = 1
         checkHard()
         CPUAttackHard()
@@ -70,8 +72,7 @@ function switchHardClick2(){
 }
 function switchHardClick3(){
     if(cont%2==0 && blockBox3==0){
-        box3.style.backgroundColor="#00f"
-        box3.style.borderRadius="100%"
+        box3.innerHTML = "X"
         blockBox3 = 1
         checkHard()
         CPUAttackHard()
@@ -79,8 +80,7 @@ function switchHardClick3(){
 }
 function switchHardClick4(){
     if(cont%2==0 && blockBox4==0){
-        box4.style.backgroundColor="#00f"
-        box4.style.borderRadius="100%"
+        box4.innerHTML = "X"
         blockBox4 = 1
         checkHard()
         CPUAttackHard()
@@ -88,8 +88,7 @@ function switchHardClick4(){
 }
 function switchHardClick5(){
     if(cont%2==0 && blockBox5==0){
-        box5.style.backgroundColor="#00f"
-        box5.style.borderRadius="100%"
+        box5.innerHTML = "X"
         blockBox5 = 1
         checkHard()
         CPUAttackHard()
@@ -97,8 +96,7 @@ function switchHardClick5(){
 }
 function switchHardClick6(){
     if(cont%2==0 && blockBox6==0){
-        box6.style.backgroundColor="#00f"
-        box6.style.borderRadius="100%"
+        box6.innerHTML = "X"
         blockBox6 = 1
         checkHard()
         CPUAttackHard()
@@ -106,8 +104,7 @@ function switchHardClick6(){
 }
 function switchHardClick7(){
     if(cont%2==0 && blockBox7==0){
-        box7.style.backgroundColor="#00f"
-        box7.style.borderRadius="100%"
+        box7.innerHTML = "X"
         blockBox7 = 1
         checkHard()
         CPUAttackHard()
@@ -115,8 +112,7 @@ function switchHardClick7(){
 }
 function switchHardClick8(){
     if(cont%2==0 && blockBox8==0){
-        box8.style.backgroundColor="#00f"
-        box8.style.borderRadius="100%"
+        box8.innerHTML = "X"
         blockBox8 = 1
         checkHard()
         CPUAttackHard()
@@ -124,8 +120,7 @@ function switchHardClick8(){
 }
 function switchHardClick9(){
     if(cont%2==0 && blockBox9==0){
-        box9.style.backgroundColor="#00f"
-        box9.style.borderRadius="100%"
+        box9.innerHTML = "X"
         blockBox9 = 1
         checkHard()
         CPUAttackHard()
@@ -134,55 +129,55 @@ function switchHardClick9(){
 
 //CPU intelligence trying to win the game
 function CPUAttackHard(){
-    if(((box1.style.backgroundImage && box2.style.backgroundImage) ||
-    (box7.style.backgroundImage && box5.style.backgroundImage) ||
-    (box9.style.backgroundImage && box6.style.bbackgroundImage)) && blockBox3 == 0){
-        box3.style.backgroundImage ="url(./img/player2.png)"
+    if(((box1.innerHTML === "O" && box2.innerHTML === "O") ||
+    (box7.innerHTML === "O" && box5.innerHTML === "O") ||
+    (box9.innerHTML === "O" && box6.style.bbackgroundImage)) && blockBox3 == 0){
+        box3.innerHTML = "O" 
         blockBox3=1
         checkHard()
-    }else if(((box2.style.backgroundImage && box3.style.backgroundImage) ||
-    (box9.style.backgroundImage && box5.style.backgroundImage) ||
-    (box7.style.backgroundImage && box4.style.backgroundImage)) && blockBox1 == 0){
-            box1.style.backgroundImage ="url(./img/player2.png)"
+    }else if(((box2.innerHTML === "O" && box3.innerHTML === "O") ||
+    (box9.innerHTML === "O" && box5.innerHTML === "O") ||
+    (box7.innerHTML === "O" && box4.innerHTML === "O")) && blockBox1 == 0){
+            box1.innerHTML = "O" 
             blockBox1=1
             checkHard()
-    }else if(((box1.style.backgroundImage && box4.style.backgroundImage) ||
-    (box3.style.backgroundImage && box5.style.backgroundImage) ||
-    (box8.style.backgroundImage && box9.style.backgroundImage)) && blockBox7 == 0){
-        box7.style.backgroundImage ="url(./img/player2.png)"
+    }else if(((box1.innerHTML === "O" && box4.innerHTML === "O") ||
+    (box3.innerHTML === "O" && box5.innerHTML === "O") ||
+    (box8.innerHTML === "O" && box9.innerHTML === "O")) && blockBox7 == 0){
+        box7.innerHTML = "O" 
             blockBox7=1
             checkHard()
-    }else if(((box3.style.backgroundImage && box6.style.backgroundImage) ||
-    (box1.style.backgroundImage && box5.style.backgroundImage) ||
-    (box7.style.backgroundImage && box8.style.backgroundImage)) && blockBox9 == 0){
-        box9.style.backgroundImage ="url(./img/player2.png)"
+    }else if(((box3.innerHTML === "O" && box6.innerHTML === "O") ||
+    (box1.innerHTML === "O" && box5.innerHTML === "O") ||
+    (box7.innerHTML === "O" && box8.innerHTML === "O")) && blockBox9 == 0){
+        box9.innerHTML = "O" 
             blockBox9=1
             checkHard()
-    }else if(((box1.style.backgroundImage && box3.style.backgroundImage) ||
-    (box5.style.backgroundImage && box8.style.backgroundImage)) && blockBox2 == 0){
-        box2.style.backgroundImage ="url(./img/player2.png)"
+    }else if(((box1.innerHTML === "O" && box3.innerHTML === "O") ||
+    (box5.innerHTML === "O" && box8.innerHTML === "O")) && blockBox2 == 0){
+        box2.innerHTML = "O"
             blockBox2=1
             checkHard()
-    }else if(((box1.style.backgroundImage && box7.style.backgroundImage) ||
-    (box5.style.backgroundImage && box6.style.backgroundImage)) && blockBox4 == 0){
-        box4.style.backgroundImage ="url(./img/player2.png)"
+    }else if(((box1.innerHTML === "O" && box7.innerHTML === "O") ||
+    (box5.innerHTML === "O" && box6.innerHTML === "O")) && blockBox4 == 0){
+        box4.innerHTML = "O"
             blockBox4=1
             checkHard()
-    }else if(((box3.style.backgroundImage && box9.style.backgroundImage) ||
-    (box4.style.backgroundImage && box5.style.backgroundImage)) && blockBox6 == 0){
-        box6.style.backgroundImage ="url(./img/player2.png)"
+    }else if(((box3.innerHTML === "O" && box9.innerHTML === "O") ||
+    (box4.innerHTML === "O" && box5.innerHTML === "O")) && blockBox6 == 0){
+        box6.innerHTML = "O"
             blockBox6=1
             checkHard()
-    }else if(((box7.style.backgroundImage && box9.style.backgroundImage) ||
-    (box2.style.backgroundImage && box5.style.backgroundImage)) && blockBox8 == 0){
-        box8.style.backgroundImage ="url(./img/player2.png)"
+    }else if(((box7.innerHTML === "O" && box9.innerHTML === "O") ||
+    (box2.innerHTML === "O" && box5.innerHTML === "O")) && blockBox8 == 0){
+        box8.innerHTML = "O" 
             blockBox8=1
             checkHard()
-    }else if(((box1.style.backgroundImage && box9.style.backgroundColor) ||
-    (box2.style.backgroundImage && box8.style.backgroundImage) ||
-    (box3.style.backgroundImage && box7.style.backgroundImage) ||
-    (box4.style.backgroundImage && box6.style.backgroundImage)) && blockBox5 == 0){
-        box5.style.backgroundImage ="url(./img/player2.png)"
+    }else if(((box1.innerHTML === "O" && box9.innerHTML === "X") ||
+    (box2.innerHTML === "O" && box8.innerHTML === "O") ||
+    (box3.innerHTML === "O" && box7.innerHTML === "O") ||
+    (box4.innerHTML === "O" && box6.innerHTML === "O")) && blockBox5 == 0){
+        box5.innerHTML = "O" 
             blockBox5=1
             checkHard()
     }else{
@@ -192,55 +187,55 @@ function CPUAttackHard(){
 
 //CPU intelligence trying to dont player1 to win the game
 function CPUDefenseHard(){
-    if(((box1.style.backgroundColor && box2.style.backgroundColor) ||
-    (box7.style.backgroundColor && box5.style.backgroundColor) ||
-    (box9.style.backgroundColor && box6.style.backgroundColor)) && blockBox3 == 0){
-        box3.style.backgroundImage ="url(./img/player2.png)"
+    if(((box1.innerHTML === "X" && box2.innerHTML === "X") ||
+    (box7.innerHTML === "X" && box5.innerHTML === "X") ||
+    (box9.innerHTML === "X" && box6.innerHTML === "X")) && blockBox3 == 0){
+        box3.innerHTML = "O" 
         blockBox3=1
         checkHard()
-    }else if(((box2.style.backgroundColor && box3.style.backgroundColor) ||
-    (box9.style.backgroundColor && box5.style.backgroundColor) ||
-    (box7.style.backgroundColor && box4.style.backgroundColor)) && blockBox1 == 0){
-            box1.style.backgroundImage ="url(./img/player2.png)"
+    }else if(((box2.innerHTML === "X" && box3.innerHTML === "X") ||
+    (box9.innerHTML === "X" && box5.innerHTML === "X") ||
+    (box7.innerHTML === "X" && box4.innerHTML === "X")) && blockBox1 == 0){
+            box1.innerHTML = "O" 
             blockBox1=1
             checkHard()
-    }else if(((box1.style.backgroundColor && box4.style.backgroundColor) ||
-    (box3.style.backgroundColor && box5.style.backgroundColor) ||
-    (box8.style.backgroundColor && box9.style.backgroundColor)) && blockBox7 == 0){
-        box7.style.backgroundImage ="url(./img/player2.png)"
+    }else if(((box1.innerHTML === "X" && box4.innerHTML === "X") ||
+    (box3.innerHTML === "X" && box5.innerHTML === "X") ||
+    (box8.innerHTML === "X" && box9.innerHTML === "X")) && blockBox7 == 0){
+        box7.innerHTML = "O" 
             blockBox7=1
             checkHard()
-    }else if(((box3.style.backgroundColor && box6.style.backgroundColor) ||
-    (box1.style.backgroundColor && box5.style.backgroundColor) ||
-    (box7.style.backgroundColor && box8.style.backgroundColor)) && blockBox9 == 0){
-        box9.style.backgroundImage ="url(./img/player2.png)"
+    }else if(((box3.innerHTML === "X" && box6.innerHTML === "X") ||
+    (box1.innerHTML === "X" && box5.innerHTML === "X") ||
+    (box7.innerHTML === "X" && box8.innerHTML === "X")) && blockBox9 == 0){
+        box9.innerHTML = "O" 
             blockBox9=1
             checkHard()
-    }else if(((box1.style.backgroundColor && box3.style.backgroundColor) ||
-    (box5.style.backgroundColor && box8.style.backgroundColor)) && blockBox2 == 0){
-        box2.style.backgroundImage ="url(./img/player2.png)"
+    }else if(((box1.innerHTML === "X" && box3.innerHTML === "X") ||
+    (box5.innerHTML === "X" && box8.innerHTML === "X")) && blockBox2 == 0){
+        box2.innerHTML = "O" 
             blockBox2=1
             checkHard()
-    }else if(((box1.style.backgroundColor && box7.style.backgroundColor) ||
-    (box5.style.backgroundColor && box6.style.backgroundColor)) && blockBox4 == 0){
-        box4.style.backgroundImage ="url(./img/player2.png)"
+    }else if(((box1.innerHTML === "X" && box7.innerHTML === "X") ||
+    (box5.innerHTML === "X" && box6.innerHTML === "X")) && blockBox4 == 0){
+        box4.innerHTML = "O" 
             blockBox4=1
             checkHard()
-    }else if(((box3.style.backgroundColor && box9.style.backgroundColor) ||
-    (box4.style.backgroundColor && box5.style.backgroundColor)) && blockBox6 == 0){
-        box6.style.backgroundImage ="url(./img/player2.png)"
+    }else if(((box3.innerHTML === "X" && box9.innerHTML === "X") ||
+    (box4.innerHTML === "X" && box5.innerHTML === "X")) && blockBox6 == 0){
+        box6.innerHTML = "O" 
             blockBox6=1
             checkHard()
-    }else if(((box7.style.backgroundColor && box9.style.backgroundColor) ||
-    (box2.style.backgroundColor && box5.style.backgroundColor)) && blockBox8 == 0){
-        box8.style.backgroundImage ="url(./img/player2.png)"
+    }else if(((box7.innerHTML === "X" && box9.innerHTML === "X") ||
+    (box2.innerHTML === "X" && box5.innerHTML === "X")) && blockBox8 == 0){
+        box8.innerHTML = "O" 
             blockBox8=1
             checkHard()
-    }else if(((box1.style.backgroundColor && box9.style.backgroundColor) ||
-    (box2.style.backgroundColor && box8.style.backgroundColor) ||
-    (box3.style.backgroundColor && box7.style.backgroundColor) ||
-    (box4.style.backgroundColor && box6.style.backgroundColor)) && blockBox5 == 0){
-        box5.style.backgroundImage ="url(./img/player2.png)"
+    }else if(((box1.innerHTML === "X" && box9.innerHTML === "X") ||
+    (box2.innerHTML === "X" && box8.innerHTML === "X") ||
+    (box3.innerHTML === "X" && box7.innerHTML === "X") ||
+    (box4.innerHTML === "X" && box6.innerHTML === "X")) && blockBox5 == 0){
+        box5.innerHTML = "O" 
             blockBox5=1
             checkHard()
     }else{
@@ -256,7 +251,7 @@ function CPURandom(){
     }else{
         if(randomSwitch == 1 && cont%2!=0){
             if(blockBox1 == 0){
-                box1.style.backgroundImage="url(./img/player2.png)"
+                box1.innerHTML = "O"
                 blockBox1 = 1
                 checkHard()
             }else{
@@ -266,7 +261,7 @@ function CPURandom(){
         }
         if(randomSwitch == 2 && cont%2!=0){
             if(blockBox2 == 0){
-                box2.style.backgroundImage="url(./img/player2.png)"
+                box2.innerHTML = "O"
                 blockBox2 = 1
                 checkHard()
             }else{
@@ -276,7 +271,7 @@ function CPURandom(){
         }
         if(randomSwitch == 3 && cont%2!=0){
             if(blockBox3 == 0){
-                box3.style.backgroundImage="url(./img/player2.png)"
+                box3.innerHTML = "O"
                 blockBox3 = 1
                 checkHard()
             }else{
@@ -286,7 +281,7 @@ function CPURandom(){
         }
         if(randomSwitch == 4 && cont%2!=0){
             if(blockBox4 == 0){
-                box4.style.backgroundImage="url(./img/player2.png)"
+                box4.innerHTML = "O"
                 blockBox4 = 1
                 checkHard()
             }else{
@@ -296,7 +291,7 @@ function CPURandom(){
         }
         if(randomSwitch == 5 && cont%2!=0){
             if(blockBox5 == 0){
-                box5.style.backgroundImage="url(./img/player2.png)"
+                box5.innerHTML = "O"
                 blockBox5 = 1
                 checkHard()
             }else{
@@ -306,7 +301,7 @@ function CPURandom(){
         }
         if(randomSwitch == 6 && cont%2!=0){
             if(blockBox6 == 0){
-                box6.style.backgroundImage="url(./img/player2.png)"
+                box6.innerHTML = "O"
                 blockBox6 = 1
                 checkHard()
             }else{
@@ -316,7 +311,7 @@ function CPURandom(){
         }
         if(randomSwitch == 7 && cont%2!=0){
             if(blockBox7 == 0){
-                box7.style.backgroundImage="url(./img/player2.png)"
+                box7.innerHTML = "O"
                 blockBox7 = 1
                 checkHard()
             }else{
@@ -326,7 +321,7 @@ function CPURandom(){
         }
         if(randomSwitch == 8 && cont%2!=0){
             if(blockBox8 == 0){
-                box8.style.backgroundImage="url(./img/player2.png)"
+                box8.innerHTML = "O"
                 blockBox8 = 1
                 checkHard()
             }else{
@@ -336,7 +331,7 @@ function CPURandom(){
         }
         if(randomSwitch == 9 && cont%2!=0){
             if(blockBox9 == 0){
-                box9.style.backgroundImage="url(./img/player2.png)"
+                box9.innerHTML = "O"
                 blockBox9 = 1
                 checkHard()
             }else{
@@ -368,31 +363,85 @@ function switchHardPlayer(){
 
 //Check the player win
 function checkHardVictory(){
-    if((box1.style.backgroundColor && box2.style.backgroundColor && box3.style.backgroundColor) ||
-    (box4.style.backgroundColor && box5.style.backgroundColor && box6.style.backgroundColor) ||
-    (box7.style.backgroundColor && box8.style.backgroundColor && box9.style.backgroundColor) ||
-    (box1.style.backgroundColor && box4.style.backgroundColor && box7.style.backgroundColor) ||
-    (box2.style.backgroundColor && box5.style.backgroundColor && box8.style.backgroundColor) ||
-    (box3.style.backgroundColor && box6.style.backgroundColor && box9.style.backgroundColor) ||
-    (box1.style.backgroundColor && box5.style.backgroundColor && box9.style.backgroundColor) ||
-    (box3.style.backgroundColor && box5.style.backgroundColor && box7.style.backgroundColor)){
+    if((box1.innerHTML === "X" && box2.innerHTML === "X" && box3.innerHTML === "X") ||
+    (box4.innerHTML === "X" && box5.innerHTML === "X" && box6.innerHTML === "X") ||
+    (box7.innerHTML === "X" && box8.innerHTML === "X" && box9.innerHTML === "X") ||
+    (box1.innerHTML === "X" && box4.innerHTML === "X" && box7.innerHTML === "X") ||
+    (box2.innerHTML === "X" && box5.innerHTML === "X" && box8.innerHTML === "X") ||
+    (box3.innerHTML === "X" && box6.innerHTML === "X" && box9.innerHTML === "X") ||
+    (box1.innerHTML === "X" && box5.innerHTML === "X" && box9.innerHTML === "X") ||
+    (box3.innerHTML === "X" && box5.innerHTML === "X" && box7.innerHTML === "X")){
         alert("Você é o vencedor!")
-        window.location.reload()
-    }else if((box1.style.backgroundImage && box2.style.backgroundImage && box3.style.backgroundImage) ||
-    (box4.style.backgroundImage && box5.style.backgroundImage && box6.style.backgroundImage) ||
-    (box7.style.backgroundImage && box8.style.backgroundImage && box9.style.backgroundImage) ||
-    (box1.style.backgroundImage && box4.style.backgroundImage && box7.style.backgroundImage) ||
-    (box2.style.backgroundImage && box5.style.backgroundImage && box8.style.backgroundImage) ||
-    (box3.style.backgroundImage && box6.style.backgroundImage && box9.style.backgroundImage) ||
-    (box1.style.backgroundImage && box5.style.backgroundImage && box9.style.backgroundImage) ||
-    (box3.style.backgroundImage && box5.style.backgroundImage && box7.style.backgroundImage)){
+        cont = 0
+        blockBox1 = 0
+        blockBox2 = 0
+        blockBox3 = 0
+        blockBox4 = 0
+        blockBox5 = 0
+        blockBox6 = 0
+        blockBox7 = 0
+        blockBox8 = 0
+        blockBox9 = 0
+        box1.innerHTML = ""
+        box2.innerHTML = ""
+        box3.innerHTML = ""
+        box4.innerHTML = ""
+        box5.innerHTML = ""
+        box6.innerHTML = ""
+        box7.innerHTML = ""
+        box8.innerHTML = ""
+        box9.innerHTML = ""
+    }else if((box1.innerHTML === "O" && box2.innerHTML === "O" && box3.innerHTML === "O") ||
+    (box4.innerHTML === "O" && box5.innerHTML === "O" && box6.innerHTML === "O") ||
+    (box7.innerHTML === "O" && box8.innerHTML === "O" && box9.innerHTML === "O") ||
+    (box1.innerHTML === "O" && box4.innerHTML === "O" && box7.innerHTML === "O") ||
+    (box2.innerHTML === "O" && box5.innerHTML === "O" && box8.innerHTML === "O") ||
+    (box3.innerHTML === "O" && box6.innerHTML === "O" && box9.innerHTML === "O") ||
+    (box1.innerHTML === "O" && box5.innerHTML === "O" && box9.innerHTML === "O") ||
+    (box3.innerHTML === "O" && box5.innerHTML === "O" && box7.innerHTML === "O")){
         alert("Você perdeu!")
-        window.location.reload()
+        cont = 0
+        blockBox1 = 0
+        blockBox2 = 0
+        blockBox3 = 0
+        blockBox4 = 0
+        blockBox5 = 0
+        blockBox6 = 0
+        blockBox7 = 0
+        blockBox8 = 0
+        blockBox9 = 0
+        box1.innerHTML = ""
+        box2.innerHTML = ""
+        box3.innerHTML = ""
+        box4.innerHTML = ""
+        box5.innerHTML = ""
+        box6.innerHTML = ""
+        box7.innerHTML = ""
+        box8.innerHTML = ""
+        box9.innerHTML = ""
     }else{
         if(cont>=9){
             document.getElementById("infoGame").innerHTML= "Jogo Finalizado!"
             alert("Jogo Empatado!")
-            window.location.reload()
+            cont = 0
+            blockBox1 = 0
+            blockBox2 = 0
+            blockBox3 = 0
+            blockBox4 = 0
+            blockBox5 = 0
+            blockBox6 = 0
+            blockBox7 = 0
+            blockBox8 = 0
+            blockBox9 = 0
+            box1.innerHTML = ""
+            box2.innerHTML = ""
+            box3.innerHTML = ""
+            box4.innerHTML = ""
+            box5.innerHTML = ""
+            box6.innerHTML = ""
+            box7.innerHTML = ""
+            box8.innerHTML = ""
+            box9.innerHTML = ""
         }
     }
 }

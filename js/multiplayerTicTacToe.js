@@ -9,6 +9,7 @@ var blockBox6 = 0
 var blockBox7 = 0
 var blockBox8 = 0
 var blockBox9 = 0
+var boardgame = document.getElementById("game")
 var btnVsCPU = document.getElementById("btnVsCPU")
 var btnVsCPUMiddle = document.getElementById("btnVsCPUMiddle")
 var btnVsCPUHard = document.getElementById("btnVsCPUHard")
@@ -27,6 +28,9 @@ function gameMultiplayerEvents(){
     alert("Jogo multiplayer iniciado!")
     setTimeout(switchMultiplayerPlayer)
     setTimeout(checkMultiplayerVictory)
+
+    //Enable the tictactoe boardgame
+    boardgame.style.display = "flex"
 
     //Disable buttons when game start
     btnMultiplayer.style.display="none" 
@@ -49,99 +53,90 @@ function gameMultiplayerEvents(){
 //Functions for Player1 and Player2 to play the game
 function switchMultiplayerClick1(){
     if(cont%2==0 && blockBox1==0){
-        box1.style.backgroundColor="#00f"
-        box1.style.borderRadius="100%"
+        box1.innerHTML="X"
         checkMultiplayer()
     }else if(cont%2!=0 && blockBox1==0){
-        box1.style.backgroundImage="url(./img/player2.png)"
+        box1innerHTML="O"
         checkMultiplayer()
     }
     blockBox1 = 1
 }
 function switchMultiplayerClick2(){
     if(cont%2==0 && blockBox2==0){
-        box2.style.backgroundColor="#00f"
-        box2.style.borderRadius="100%"
+        box2.innerHTML="X"
         checkMultiplayer()
     }else if(cont%2!=0 && blockBox2==0){
-        box2.style.backgroundImage="url(./img/player2.png)"
+        box2.innerHTML="O"
         checkMultiplayer()
     }
     blockBox2 = 1
 }
 function switchMultiplayerClick3(){
     if(cont%2==0 && blockBox3==0){
-        box3.style.backgroundColor="#00f"
-        box3.style.borderRadius="100%"
+        box3.innerHTML="X"
         checkMultiplayer()
     }else if(cont%2!=0 && blockBox3==0){
-        box3.style.backgroundImage="url(./img/player2.png)"
+        box3.innerHTML="O"
         checkMultiplayer()
     }
     blockBox3 = 1
 }
 function switchMultiplayerClick4(){
     if(cont%2==0 && blockBox4==0){
-        box4.style.backgroundColor="#00f"
-        box4.style.borderRadius="100%"
+        box4.innerHTML="X"
         checkMultiplayer()
     }else if(cont%2!=0 && blockBox4==0){
-        box4.style.backgroundImage="url(./img/player2.png)"
+        box4.innerHTML="O"
         checkMultiplayer()
     }
     blockBox4 = 1
 }
 function switchMultiplayerClick5(){
     if(cont%2==0 && blockBox5==0){
-        box5.style.backgroundColor="#00f"
-        box5.style.borderRadius="100%"
+        box5.innerHTML="X"
         checkMultiplayer()
     }else if(cont%2!=0 && blockBox5==0){
-        box5.style.backgroundImage="url(./img/player2.png)"
+        box5.innerHTML="O"
         checkMultiplayer()
     }
     blockBox5 = 1
 }
 function switchMultiplayerClick6(){
     if(cont%2==0 && blockBox6==0){
-        box6.style.backgroundColor="#00f"
-        box6.style.borderRadius="100%"
+        box6.innerHTML="X"
         checkMultiplayer()
     }else if(cont%2!=0 && blockBox6==0){
-        box6.style.backgroundImage="url(./img/player2.png)"
+        box6.innerHTML="O"
         checkMultiplayer()
     }
     blockBox6 = 1
 }
 function switchMultiplayerClick7(){
     if(cont%2==0 && blockBox7==0){
-        box7.style.backgroundColor="#00f"
-        box7.style.borderRadius="100%"
+        box7.innerHTML="X"
         checkMultiplayer()
     }else if(cont%2!=0 && blockBox7==0){
-        box7.style.backgroundImage="url(./img/player2.png)"
+        box7.innerHTML="O"
         checkMultiplayer()
     }
     blockBox7 = 1
 }
 function switchMultiplayerClick8(){
     if(cont%2==0 && blockBox8==0){
-        box8.style.backgroundColor="#00f"
-        box8.style.borderRadius="100%"
+        box8.innerHTML="X"
         checkMultiplayer()
     }else if(cont%2!=0 && blockBox8==0){
-        box8.style.backgroundImage="url(./img/player2.png)"
+        box8.innerHTML="O"
         checkMultiplayer()
     }
     blockBox8 = 1
 }
 function switchMultiplayerClick9(){
     if(cont%2==0 && blockBox9==0){
-        box9.style.backgroundColor="#00f"
-        box9.style.borderRadius="100%"
+        box9.innerHTML="X"
         checkMultiplayer()
     }else if(cont%2!=0 && blockBox9==0){
-        box9.style.backgroundImage="url(./img/player2.png)"
+        box9.innerHTML="O"
         checkMultiplayer()
     }
     blockBox9 = 1
@@ -158,33 +153,33 @@ function checkMultiplayer(){
 function switchMultiplayerPlayer(){
     if(cont<9){
         if(cont%2==0){
-            document.getElementById("infoGame").innerHTML= "Vez do Jogador 1"
+            document.getElementById("infoGame").innerHTML= "Vez do Jogador X"
         }else{
-            document.getElementById("infoGame").innerHTML= "Vez do Jogador 2"
+            document.getElementById("infoGame").innerHTML= "Vez do Jogador O"
         }
     }
 }
 
 //Check the player win
 function checkMultiplayerVictory(){
-    if((box1.style.backgroundColor && box2.style.backgroundColor && box3.style.backgroundColor) ||
-    (box4.style.backgroundColor && box5.style.backgroundColor && box6.style.backgroundColor) ||
-    (box7.style.backgroundColor && box8.style.backgroundColor && box9.style.backgroundColor) ||
-    (box1.style.backgroundColor && box4.style.backgroundColor && box7.style.backgroundColor) ||
-    (box2.style.backgroundColor && box5.style.backgroundColor && box8.style.backgroundColor) ||
-    (box3.style.backgroundColor && box6.style.backgroundColor && box9.style.backgroundColor) ||
-    (box1.style.backgroundColor && box5.style.backgroundColor && box9.style.backgroundColor) ||
-    (box3.style.backgroundColor && box5.style.backgroundColor && box7.style.backgroundColor)){
+    if((box1.innerHTML === "X" && box2.innerHTML === "X" && box3.innerHTML === "X") ||
+    (box4.innerHTML === "X" && box5.innerHTML === "X" && box6.innerHTML === "X") ||
+    (box7.innerHTML === "X" && box8.innerHTML === "X" && box9.innerHTML === "X") ||
+    (box1.innerHTML === "X" && box4.innerHTML === "X" && box7.innerHTML === "X") ||
+    (box2.innerHTML === "X" && box5.innerHTML === "X" && box8.innerHTML === "X") ||
+    (box3.innerHTML === "X" && box6.innerHTML === "X" && box9.innerHTML === "X") ||
+    (box1.innerHTML === "X" && box5.innerHTML === "X" && box9.innerHTML === "X") ||
+    (box3.innerHTML === "X" && box5.innerHTML === "X" && box7.innerHTML === "X")){
         alert("Jogador 1 é o vencedor!")
         window.location.reload()
-    }else if((box1.style.backgroundImage && box2.style.backgroundImage && box3.style.backgroundImage) ||
-    (box4.style.backgroundImage && box5.style.backgroundImage && box6.style.backgroundImage) ||
-    (box7.style.backgroundImage && box8.style.backgroundImage && box9.style.backgroundImage) ||
-    (box1.style.backgroundImage && box4.style.backgroundImage && box7.style.backgroundImage) ||
-    (box2.style.backgroundImage && box5.style.backgroundImage && box8.style.backgroundImage) ||
-    (box3.style.backgroundImage && box6.style.backgroundImage && box9.style.backgroundImage) ||
-    (box1.style.backgroundImage && box5.style.backgroundImage && box9.style.backgroundImage) ||
-    (box3.style.backgroundImage && box5.style.backgroundImage && box7.style.backgroundImage)){
+    }else if((box1.innerHTML === "O" && box2.innerHTML === "O" && box3.innerHTML === "O") ||
+    (box4.innerHTML === "O" && box5.innerHTML === "O" && box6.innerHTML === "O") ||
+    (box7.innerHTML === "O" && box8.innerHTML === "O" && box9.innerHTML === "O") ||
+    (box1.innerHTML === "O" && box4.innerHTML === "O" && box7.innerHTML === "O") ||
+    (box2.innerHTML === "O" && box5.innerHTML === "O" && box8.innerHTML === "O") ||
+    (box3.innerHTML === "O" && box6.innerHTML === "O" && box9.innerHTML === "O") ||
+    (box1.innerHTML === "O" && box5.innerHTML === "O" && box9.innerHTML === "O") ||
+    (box3.innerHTML === "O" && box5.innerHTML === "O" && box7.innerHTML === "O")){
         alert("Jogador 2 é o vencedor!")
         window.location.reload()
     }else{
