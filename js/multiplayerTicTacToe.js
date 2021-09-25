@@ -56,7 +56,7 @@ function switchMultiplayerClick1(){
         box1.innerHTML="X"
         checkMultiplayer()
     }else if(cont%2!=0 && blockBox1==0){
-        box1innerHTML="O"
+        box1.innerHTML="O"
         checkMultiplayer()
     }
     blockBox1 = 1
