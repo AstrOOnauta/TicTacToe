@@ -171,7 +171,25 @@ function checkMultiplayerVictory(){
     (box1.innerHTML === "X" && box5.innerHTML === "X" && box9.innerHTML === "X") ||
     (box3.innerHTML === "X" && box5.innerHTML === "X" && box7.innerHTML === "X")){
         alert("Jogador 1 é o vencedor!")
-        window.location.reload()
+        cont = 0
+        blockBox1 = 0
+        blockBox2 = 0
+        blockBox3 = 0
+        blockBox4 = 0
+        blockBox5 = 0
+        blockBox6 = 0
+        blockBox7 = 0
+        blockBox8 = 0
+        blockBox9 = 0
+        box1.innerHTML = ""
+        box2.innerHTML = ""
+        box3.innerHTML = ""
+        box4.innerHTML = ""
+        box5.innerHTML = ""
+        box6.innerHTML = ""
+        box7.innerHTML = ""
+        box8.innerHTML = ""
+        box9.innerHTML = ""
     }else if((box1.innerHTML === "O" && box2.innerHTML === "O" && box3.innerHTML === "O") ||
     (box4.innerHTML === "O" && box5.innerHTML === "O" && box6.innerHTML === "O") ||
     (box7.innerHTML === "O" && box8.innerHTML === "O" && box9.innerHTML === "O") ||
@@ -181,12 +199,48 @@ function checkMultiplayerVictory(){
     (box1.innerHTML === "O" && box5.innerHTML === "O" && box9.innerHTML === "O") ||
     (box3.innerHTML === "O" && box5.innerHTML === "O" && box7.innerHTML === "O")){
         alert("Jogador 2 é o vencedor!")
-        window.location.reload()
+        cont = 0
+        blockBox1 = 0
+        blockBox2 = 0
+        blockBox3 = 0
+        blockBox4 = 0
+        blockBox5 = 0
+        blockBox6 = 0
+        blockBox7 = 0
+        blockBox8 = 0
+        blockBox9 = 0
+        box1.innerHTML = ""
+        box2.innerHTML = ""
+        box3.innerHTML = ""
+        box4.innerHTML = ""
+        box5.innerHTML = ""
+        box6.innerHTML = ""
+        box7.innerHTML = ""
+        box8.innerHTML = ""
+        box9.innerHTML = ""
     }else{
         if(cont>=9){
             document.getElementById("infoGame").innerHTML= "Jogo Finalizado!"
             alert("Jogo Empatado!")
-            window.location.reload()
+            cont = 0
+            blockBox1 = 0
+            blockBox2 = 0
+            blockBox3 = 0
+            blockBox4 = 0
+            blockBox5 = 0
+            blockBox6 = 0
+            blockBox7 = 0
+            blockBox8 = 0
+            blockBox9 = 0
+            box1.innerHTML = ""
+            box2.innerHTML = ""
+            box3.innerHTML = ""
+            box4.innerHTML = ""
+            box5.innerHTML = ""
+            box6.innerHTML = ""
+            box7.innerHTML = ""
+            box8.innerHTML = ""
+            box9.innerHTML = ""
         }
     }
 }
